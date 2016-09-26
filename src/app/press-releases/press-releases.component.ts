@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SecRssService } from '../shared/sec-rss.service';
 import  { RssFeed } from '../shared/models/rss-feed';
 import { Item } from '../shared/models/item';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({

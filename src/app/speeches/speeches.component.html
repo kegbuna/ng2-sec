@@ -7,5 +7,6 @@
   <div class="col sm12 m6" *ngIf="itemHtml">
     <p>Pub Date {{ itemPubDate | date }}</p>
     <p [innerHtml]="itemHtml"></p>
+    <a class="button" [href]="itemLink">Check it Out</a>
   </div>
 </div>

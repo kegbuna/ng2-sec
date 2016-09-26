@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SecRssService } from '../shared/sec-rss.service';
 import  { RssFeed } from '../shared/models/rss-feed';
 import { Item } from '../shared/models/item';
-import { DomSanitizer } from '@angular/platform-browser';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 
 @Component({
@@ -15,6 +15,7 @@ export class SpeechesComponent implements OnInit {
   items: Item[];
   itemHtml: any;
   itemPubDate: Date;
+  itemLink: SafeResourceUrl;
 
   constructor(private secService: SecRssService, private domSanitizer: DomSanitizer ) {
   }
@@ -33,5 +34,6 @@ export class SpeechesComponent implements OnInit {
   selectItem(item: Item) {
     this.itemPubDate = new Date(item.pubdate);
     this.itemHtml = this.domSanitizer.bypassSecurityTrustHtml(item.description);
+    this.itemLink = this.domSanitizer.bypassSecurityTrustResourceUrl(item.link);
   }
 }
