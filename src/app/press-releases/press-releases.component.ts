@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SecRssService } from '../shared/sec-rss.service';
-import  { RssFeed } from '../shared/models/rss-feed';
+import { RssFeed } from '../shared/models/rss-feed';
 import { Item } from '../shared/models/item';
 import { DomSanitizer } from '@angular/platform-browser';
 
